@@ -57,7 +57,7 @@ cd "${directory_path}"
 
 echo "[i] [${directory_name}] check for existing repo"
 EXITCODE=0
-restic check --with-cache --quiet || EXITCODE=$?
+restic key list --quiet || EXITCODE=$?
 if [ "${EXITCODE}" -eq "0" ]; then
   echo "[i] [${directory_name}] existing repo found"
 else
