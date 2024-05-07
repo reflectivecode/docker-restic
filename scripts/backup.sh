@@ -55,9 +55,9 @@ export RESTIC_PASSWORD="${password}"
 
 cd "${directory_path}"
 
-echo "[i] [${directory_name}] check for existing repo"
+echo "[i] [${directory_name}] remove stale locks"
 EXITCODE=0
-restic key list --quiet || EXITCODE=$?
+restic unlock --quiet || EXITCODE=$?
 if [ "${EXITCODE}" -eq "0" ]; then
   echo "[i] [${directory_name}] existing repo found"
 else
