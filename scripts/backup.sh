@@ -109,7 +109,7 @@ if [ "${local_repo}" != "${RESTIC_REPOSITORY}" ]; then
 fi
 
 echo "[i] [${directory_name}] backing up"
-restic backup --quiet --group-by '' --exclude "${IDEMPOTENCE_FLAG}" --exclude-file "${exclude_file}" .
+restic backup --quiet --group-by '' --exclude "${IDEMPOTENCE_FLAG}" --exclude-file "${exclude_file}" --exclude-caches .
 
 echo "[i] [${directory_name}] remove old backups"
 restic forget --quiet --group-by '' --keep-within "${keep_within}" --keep-within-hourly "${keep_within_hourly}" --keep-within-daily "${keep_within_daily}"
