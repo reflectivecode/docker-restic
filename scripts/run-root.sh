@@ -51,7 +51,9 @@ do
   if [[ "${PUSH_URL:-}" ]]; then
     loop_ms=$((1000*(end_loop-start_loop)))
     url="${PUSH_URL}&time=${loop_ms}"
+    echo "[i] pinging push URL with interval ${loop_ms}"
     curl --silent --show-error --location "${url}" || true
+    echo ""
   fi
 
   if [ "${INTERVAL}" = "-1" ]; then exit 0; fi
