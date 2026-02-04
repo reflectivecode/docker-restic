@@ -1,4 +1,4 @@
-FROM alpine:3.22
+FROM alpine:3.23
 
 # required environment variables
 #   AWS_ACCESS_KEY_ID
